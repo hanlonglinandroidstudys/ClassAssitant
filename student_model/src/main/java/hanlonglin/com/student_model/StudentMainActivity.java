@@ -100,8 +100,10 @@ public class StudentMainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_exit) {
             try {
-                Intent intent = new Intent("login");
-                startActivity(intent);
+//                Intent intent = new Intent("login");
+//                startActivity(intent);
+
+                ARouter.getInstance().build(ARouterMap.AC_LOGIN).navigation();
                 finish();
             } catch (Exception e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();

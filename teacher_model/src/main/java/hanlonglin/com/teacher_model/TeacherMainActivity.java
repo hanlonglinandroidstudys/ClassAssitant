@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 import hanlonglin.com.common.AppData.TeaData;
 import hanlonglin.com.common.database.util.ARouterMap;
@@ -100,8 +101,9 @@ public class TeacherMainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_exit) {
-            Intent intent = new Intent("login");
-            startActivity(intent);
+//            Intent intent = new Intent("login");
+//            startActivity(intent);
+            ARouter.getInstance().build(ARouterMap.AC_LOGIN).navigation();
             finish();
             return true;
         }
