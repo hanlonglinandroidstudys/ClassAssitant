@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hanlonglin.com.teacher_model">
+
+    <application>
+        <activity
+            android:name=".TeacherMainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="teacher_main" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activitys.TeaHomeworkModifyActivity"/>
+        <activity android:name=".activitys.TeaHomeworkScoreActivity"/>
+        <activity android:name=".activitys.TeaCheckAttendActivity"/>
+        <activity android:name=".activitys.TeaAnswerActivity"/>
+    </application>
+</manifest>

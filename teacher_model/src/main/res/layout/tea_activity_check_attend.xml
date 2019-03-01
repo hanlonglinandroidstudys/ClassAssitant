@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:ignore="MissingDefaultResource">
+
+    <TextView
+        android:id="@+id/txt_tname"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="检查考勤"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/ck_attend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="是否到达"/>
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@android:color/holo_orange_dark"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@android:color/white"
+        android:text="确认"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="考勤记录："
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView_attend_record"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

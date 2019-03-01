@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="hanlonglin.com.teacher_model">
+
+    <application
+        android:name=".teaApp.TeaApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_menu_gallery"
+        android:label="教师模块"
+        tools:replace="android:label"
+        android:roundIcon="@drawable/ic_menu_gallery"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="hanlonglin.com.teacher_model.TeacherMainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activitys.TeaHomeworkModifyActivity"/>
+        <activity android:name=".activitys.TeaHomeworkScoreActivity"/>
+        <activity android:name=".activitys.TeaCheckAttendActivity"/>
+        <activity android:name=".activitys.TeaAnswerActivity"/>
+    </application>
+</manifest>

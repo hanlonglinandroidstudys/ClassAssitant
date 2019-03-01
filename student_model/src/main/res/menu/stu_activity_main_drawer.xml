@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_stu_homework"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="查看作业" />
+        <item
+            android:id="@+id/nav_stu_score"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="查询成绩" />
+        <item
+            android:id="@+id/nav_stu_ask"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="课堂提问" />
+        <item
+            android:id="@+id/nav_stu_questions"
+            android:icon="@android:drawable/ic_menu_help"
+            android:title="提问记录" />
+        <item
+            android:id="@+id/nav_stu_notice"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="查看公告" />
+        <item
+            android:id="@+id/nav_stu_dayoff"
+            android:icon="@android:drawable/ic_menu_day"
+            android:title="请假" />
+        <item
+            android:id="@+id/nav_stu_dayoff_record"
+            android:icon="@android:drawable/ic_menu_day"
+            android:title="请假记录" />
+        <item
+            android:id="@+id/nav_stu_info"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="个人信息"/>
+    </group>
+
+</menu>

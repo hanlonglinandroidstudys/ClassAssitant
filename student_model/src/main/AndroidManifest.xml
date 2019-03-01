@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="hanlonglin.com.student_model">
+
+    <application
+        android:name=".stuApp.StuApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_menu_gallery"
+        android:label="学生模块"
+        tools:replace="android:label"
+        android:roundIcon="@drawable/ic_menu_gallery"
+        android:supportsRtl="true"
+        android:theme="@style/StudentStyle">
+        <activity
+            android:name="hanlonglin.com.student_model.StudentMainActivity"
+            android:theme="@style/StudentStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activitys.SubmitHomeworkActivity"/>
+    </application>
+</manifest>

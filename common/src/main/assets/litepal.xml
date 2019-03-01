@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="class_db" />
+
+    <version value="2" />
+
+    <list>
+        <mapping class="hanlonglin.com.common.database.model.Student" />
+        <mapping class="hanlonglin.com.common.database.model.Teacher" />
+        <mapping class="hanlonglin.com.common.database.model.Homework_publish" />
+        <mapping class="hanlonglin.com.common.database.model.Homework_do" />
+        <mapping class="hanlonglin.com.common.database.model.Notice" />
+        <mapping class="hanlonglin.com.common.database.model.Profession" />
+        <mapping class="hanlonglin.com.common.database.model.Teacher_Gp" />
+        <mapping class="hanlonglin.com.common.database.model.Dayoff" />
+        <mapping class="hanlonglin.com.common.database.model.Question" />
+        <mapping class="hanlonglin.com.common.database.model.Attend" />
+    </list>
+
+</litepal>

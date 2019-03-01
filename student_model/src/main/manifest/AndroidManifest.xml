@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hanlonglin.com.student_model">
+
+    <application>
+        <activity
+            android:name=".StudentMainActivity"
+            android:theme="@style/StudentStyle">
+            <intent-filter>
+                <action android:name="student_main" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activitys.SubmitHomeworkActivity"
+            android:theme="@style/StudentStyle" />
+    </application>
+</manifest>

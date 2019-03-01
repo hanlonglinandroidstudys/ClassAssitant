@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_tea_call"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="课堂点名" />
+        <item
+            android:id="@+id/nav_tea_publish_homework"
+            android:icon="@android:drawable/ic_menu_report_image"
+            android:title="作业发布" />
+        <item
+            android:id="@+id/nav_tea_modify_homework"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="作业批改" />
+        <item
+            android:id="@+id/nav_tea_score"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:title="成绩查询" />
+        <item
+            android:id="@+id/nav_tea_questions"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:title="学生提问" />
+        <item
+            android:id="@+id/nav_tea_dayoff_requre"
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:title="请假申请" />
+        <item
+            android:id="@+id/nav_tea_publish_notice"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="发布公告" />
+        <item
+            android:id="@+id/nav_tea_info"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="个人信息" />
+    </group>
+
+</menu>
