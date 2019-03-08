@@ -114,6 +114,7 @@
         android:layout_height="wrap_content"
         android:checked="false"
         android:layout_margin="5dp"
+        android:alpha="0.3"
         android:layout_below="@+id/li_info_content"
         android:text="修改密码" />
 

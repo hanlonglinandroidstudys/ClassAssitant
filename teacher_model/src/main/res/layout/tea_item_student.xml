@@ -3,8 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/ed_bg"
-    android:layout_margin="8dp">
+    android:layout_margin="5dp">
 
     <TextView
         android:id="@+id/txt_name"
@@ -13,7 +12,7 @@
         android:layout_centerVertical="true"
         android:layout_margin="5dp"
         android:padding="5dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/ed_bg2"
         android:gravity="center"
         android:text="王蒙"
         android:textColor="@android:color/white"

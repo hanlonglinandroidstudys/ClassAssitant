@@ -1,75 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    app:cardCornerRadius="5dp">
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp">
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp">
 
-
-        <TextView
-            android:id="@+id/txt_question"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="作业："
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/txt_answer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_question"
-            android:layout_marginTop="5dp"
-            android:text="回答："
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/txt_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_answer"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
-            android:text="王蒙"
-            android:textSize="15dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txt_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_name"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:text="2013-11-09"
-            android:textSize="12dp" />
-
-        <Button
-            android:id="@+id/btn_auth"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_below="@+id/txt_date"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@android:color/holo_orange_dark"
-            android:padding="0dp"
-            android:text="批改"
-            android:textColor="@android:color/white" />
-
-        <View
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/btn_auth"
-            android:layout_marginTop="5dp"
-            android:background="@android:color/darker_gray" />
-    </RelativeLayout>
-</android.support.v7.widget.CardView>
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp">
+
+
+            <TextView
+                android:id="@+id/txt_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="作业："
+                android:textStyle="bold"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/txt_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_question"
+                android:layout_marginTop="5dp"
+                android:text="回答："
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_answer"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:text="王蒙"
+                android:textSize="10dp"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_name"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:text="2013-11-09"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/btn_auth"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/txt_date"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/ed_bg"
+                android:padding="0dp"
+                android:text="批改"
+                android:layout_margin="5dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_orange_dark" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

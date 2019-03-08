@@ -1,17 +1,24 @@
 package hanlonglin.com.classassistant;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.text.TextUtils;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 
 import org.litepal.crud.DataSupport;
 
@@ -20,6 +27,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 import hanlonglin.com.common.database.model.Student;
 import hanlonglin.com.common.database.model.Teacher;
 import hanlonglin.com.common.database.util.ARouterMap;
@@ -62,10 +70,18 @@ public class RegisterActivity extends AppCompatActivity {
     private final static int TYPE_STUDENT = 0;
     private final static int TYPE_TEACHER = 1;
     int REGISTER_TYPE = TYPE_STUDENT;
+    @BindView(R.id.image_login)
+    CircleImageView imageLogin;
+    @BindView(R.id.li_content)
+    CardView liContent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
 
@@ -79,9 +95,11 @@ public class RegisterActivity extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.ra_student:
                         REGISTER_TYPE = TYPE_STUDENT;
+                        imageLogin.setImageResource(R.drawable.student);
                         break;
                     case R.id.ra_teacher:
                         REGISTER_TYPE = TYPE_TEACHER;
+                        imageLogin.setImageResource(R.drawable.teacher);
                         break;
                 }
             }
@@ -128,9 +146,9 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(this, "年级和专业id不能为空！", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if(checkStuHasRegister(Integer.parseInt(id))){
+            if (checkStuHasRegister(Integer.parseInt(id))) {
                 Toast.makeText(this, "该学生id已经注册！请更换id", Toast.LENGTH_SHORT).show();
-                return ;
+                return;
             }
             Student student = new Student();
             student.setSid(Integer.parseInt(id));
@@ -139,33 +157,51 @@ public class RegisterActivity extends AppCompatActivity {
             student.setGid(Integer.parseInt(gid));
             student.setPid(Integer.parseInt(pid));
             student.save();
-            Toast.makeText(this, "恭喜你注册成功,请前往登陆！", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "恭喜你注册成功,请前往登陆！", Toast.LENGTH_SHORT).show();
+            showSuccessDialog();
         } else if (REGISTER_TYPE == TYPE_TEACHER) {
-            if(checkTeaHasRegister(Integer.parseInt(id))){
+            if (checkTeaHasRegister(Integer.parseInt(id))) {
                 Toast.makeText(this, "该教师id已经注册！请更换id", Toast.LENGTH_SHORT).show();
-                return ;
+                return;
             }
-            Teacher teacher=new Teacher();
+            Teacher teacher = new Teacher();
             teacher.setTid(Integer.parseInt(id));
             teacher.setTpasswd(passwd);
             teacher.setTname(name);
             teacher.save();
-            Toast.makeText(this, "恭喜你注册成功，请前往登陆！", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "恭喜你注册成功，请前往登陆！", Toast.LENGTH_SHORT).show();
+            showSuccessDialog();
         }
     }
 
-    private boolean checkStuHasRegister(int sid){
-        List<Student> list=DataSupport.where("sid=?",sid+"").find(Student.class);
-        if(list.size()>0)
+    private boolean checkStuHasRegister(int sid) {
+        List<Student> list = DataSupport.where("sid=?", sid + "").find(Student.class);
+        if (list.size() > 0)
             return true;
         else
             return false;
     }
-    private boolean checkTeaHasRegister(int tid){
-        List<Teacher> list=DataSupport.where("tid=?",tid+"").find(Teacher.class);
-        if(list.size()>0)
+
+    private boolean checkTeaHasRegister(int tid) {
+        List<Teacher> list = DataSupport.where("tid=?", tid + "").find(Teacher.class);
+        if (list.size() > 0)
             return true;
         else
             return false;
+    }
+
+    private void showSuccessDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("成功");
+        builder.setMessage("恭喜你，注册成功，快去登录吧！");
+        builder.setCancelable(false);
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                finish();
+            }
+        });
+        builder.show();
     }
 }

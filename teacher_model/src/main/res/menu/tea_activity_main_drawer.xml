@@ -6,35 +6,35 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_tea_call"
-            android:icon="@android:drawable/ic_menu_edit"
+            android:icon="@drawable/dianming"
             android:title="课堂点名" />
         <item
             android:id="@+id/nav_tea_publish_homework"
-            android:icon="@android:drawable/ic_menu_report_image"
+            android:icon="@drawable/homewk_fabu"
             android:title="作业发布" />
         <item
             android:id="@+id/nav_tea_modify_homework"
-            android:icon="@android:drawable/ic_menu_manage"
+            android:icon="@drawable/homewk_pigai"
             android:title="作业批改" />
         <item
             android:id="@+id/nav_tea_score"
-            android:icon="@android:drawable/ic_menu_preferences"
+            android:icon="@drawable/score_search"
             android:title="成绩查询" />
         <item
             android:id="@+id/nav_tea_questions"
-            android:icon="@android:drawable/ic_menu_preferences"
+            android:icon="@drawable/student_ask"
             android:title="学生提问" />
         <item
             android:id="@+id/nav_tea_dayoff_requre"
-            android:icon="@android:drawable/ic_menu_preferences"
+            android:icon="@drawable/student_dayoff"
             android:title="请假申请" />
         <item
             android:id="@+id/nav_tea_publish_notice"
-            android:icon="@android:drawable/ic_menu_agenda"
+            android:icon="@drawable/notice_fabu"
             android:title="发布公告" />
         <item
             android:id="@+id/nav_tea_info"
-            android:icon="@android:drawable/ic_menu_info_details"
+            android:icon="@drawable/person_info"
             android:title="个人信息" />
     </group>
 

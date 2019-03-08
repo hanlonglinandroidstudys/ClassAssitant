@@ -43,6 +43,7 @@ public class StudentMainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("TAG","StudentMainActivity start...");
         setContentView(R.layout.stu_activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -131,6 +132,7 @@ public class StudentMainActivity extends AppCompatActivity
     private void replaceFragment(int id) {
         Log.e("TAG", "开始替换fragment:");
         FragmentTransaction fgTrasaction = fgManager.beginTransaction();
+        fgTrasaction.setCustomAnimations(R.anim.fg_in,R.anim.fg_out);
         hideAllFg(fgTrasaction);
         if (id == R.id.nav_stu_homework) {
             Log.e("TAG", "替换fragment:homework");

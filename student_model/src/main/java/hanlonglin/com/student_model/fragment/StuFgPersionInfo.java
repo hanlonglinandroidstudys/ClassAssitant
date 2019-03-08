@@ -62,8 +62,10 @@ public class StuFgPersionInfo extends BaseFragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
+                    ck_change_passwd.setAlpha(1f);
                     li_change_passwd.setVisibility(View.VISIBLE);
                 }else{
+                    ck_change_passwd.setAlpha(0.3f);
                     li_change_passwd.setVisibility(View.GONE);
                 }
             }

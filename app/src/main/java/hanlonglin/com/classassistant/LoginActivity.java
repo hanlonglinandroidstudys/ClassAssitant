@@ -1,15 +1,18 @@
 package hanlonglin.com.classassistant;
 
+
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -57,10 +60,16 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     @BindView(R.id.txt_goto_register)
     TextView txtGotoRegister;
+    @BindView(R.id.image_login)
+    ImageView imageLogin;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            //透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
@@ -81,14 +90,38 @@ public class LoginActivity extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.ra_student:
                         LOGIN_TYPE = TYPE_STUDENT;
+                        imageLogin.setImageResource(R.drawable.student);
                         break;
                     case R.id.ra_teacher:
                         LOGIN_TYPE = TYPE_TEACHER;
+                        imageLogin.setImageResource(R.drawable.teacher);
                         break;
                 }
             }
         });
     }
+
+//    private void animLoginImage(int type) {
+//        int fromRes=R.drawable.teacher, toRes=R.drawable.student;
+//        if (type == TYPE_TEACHER) {
+//            fromRes = R.drawable.student;
+//            toRes = R.drawable.teacher;
+//        } else if (type == TYPE_STUDENT) {
+//            fromRes = R.drawable.teacher;
+//            toRes = R.drawable.student;
+//        }
+//        ObjectAnimator alpha1 = ObjectAnimator.ofFloat(imageLogin, "alpha", 1, 0);
+//        alpha1.setDuration(500);
+//
+//        ObjectAnimator alpha2 = ObjectAnimator.ofFloat(imageLogin, "alpha", 0, 1);
+//        alpha2.setDuration(500);
+//
+//        AnimatorSet animatorSet=new AnimatorSet();
+//        animatorSet.play(alpha1).before(alpha2);
+//
+//        imageLogin.setImageResource(toRes);
+//
+//    }
 
     @OnClick(R.id.btn_login)
     public void onViewClicked() {
@@ -162,7 +195,6 @@ public class LoginActivity extends AppCompatActivity {
 //            e.printStackTrace();
 //            Toast.makeText(this, "登陆失败！错误：" + e.getMessage(), Toast.LENGTH_SHORT).show();
 //        }
-
         ARouter.getInstance().build(ARouterMap.AC_TEACHER_MAIN).navigation();
         finish();
     }

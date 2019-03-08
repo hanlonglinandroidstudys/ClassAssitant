@@ -48,6 +48,8 @@ dependencies {
     //arouoter
     api 'com.alibaba:arouter-api:1.4.1'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    //circleImage
+    api 'de.hdodenhof:circleimageview:3.0.0'
 
 
 }
